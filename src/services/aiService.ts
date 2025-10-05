@@ -1,5 +1,7 @@
+const API_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 export async function generateQuestions(topic: string) {
-  const res = await fetch("http://localhost:3000/api/questions", {
+  const res = await fetch(API_URL + "/api/questions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ topic }),
@@ -10,7 +12,7 @@ export async function generateQuestions(topic: string) {
 }
 
 export async function generateFeedback(score: number, topic: string) {
-  const res = await fetch("http://localhost:3000/api/feedback", {
+  const res = await fetch(API_URL + "/api/feedback", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ score, topic }),

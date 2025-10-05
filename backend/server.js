@@ -4,7 +4,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { GoogleGenAI } = require("@google/genai");
 
-dotenv.config({ path: "../.env" }); // adjust if your .env is one level up
+dotenv.config(); // adjust if your .env is one level up
 
 console.log("Gemini key loaded:", process.env.GOOGLE_GEMINI_API_KEY?.slice(0, 8));
 
